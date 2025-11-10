@@ -1,0 +1,1 @@
+# devops-dst-2025-kube-deployment-config
