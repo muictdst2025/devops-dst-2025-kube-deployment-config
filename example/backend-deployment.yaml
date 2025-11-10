@@ -1,1 +1,5 @@
+--- Example of DB
+--- dbuser : admin 
+--- dbpassword :admin
+db: muict.db.svc.local/example-db
 
