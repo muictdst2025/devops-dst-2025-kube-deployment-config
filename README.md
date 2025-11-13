@@ -32,6 +32,8 @@ Note: ควรเป็น SQL คำสั่งสร้างตาราง
 แก้ <group-name> เป็นชื่อกลุ่มตัวเองในทุกไฟล์
 
 ## Extra
-ถ้ากลุ่มไหนเรียก API Backend จาก Frontend โดยการเขียน Localhost ลงไปให้แก้ตามใน Comment ใน frontend-deployment.yaml ใน Source Code ของ Frontend แล้ว push ขึ้น Docker Hub ใหม่
+- ถ้ากลุ่มไหนเรียก API Backend จาก Frontend โดยการเขียน Localhost ลงไปให้แก้ตามใน Comment ใน frontend-deployment.yaml ใน Source Code ของ Frontend แล้ว push ขึ้น Docker Hub ใหม่
+
+- ถ้ากลุ่มไหน มี Frontend แยกเป็น User และ Admin ให้แยก ทำ Deployment นะ user ให้ใช้ใน Example ส่วน Admin ให้ใช้ใน Extra แล้ว Copy ลงที่ Folder กลุ่มตัวเอง
 
 

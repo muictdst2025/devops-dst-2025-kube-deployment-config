@@ -1,36 +1,38 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: <group-name>-frontend-service
+  name: <group-name>-frontend-admin-service
   namespace: <group-name>-app
 spec:
   selector:
-    app: <group-name>-frontend
+    app: <group-name>-frontend-admin
   ports:
     - port: 80
       targetPort: 3000
   type: ClusterIP
 
+
 ---
 
-piVersion: apps/v1
+
+apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: <group-name>-frontend-deployment
+  name: <group-name>-frontend-admin-deployment
   namespace: <group-name>-app
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: <group-name>-frontend
+      app: <group-name>-frontend-admin
   template:
     metadata:
       labels:
-        app: <group-name>-frontend
+        app: <group-name>-frontend-admin
     spec:
       containers:
-        - name: <group-name>-frontend
-          image: <dockerhub-username>/<frontend-image-name>:<tag>
+        - name: <group-name>-frontend-admin
+          image: <dockerhub-username>/<frontend-admin-image-name>:<tag>
           ports:
             - containerPort: 3000
           env:
@@ -52,6 +54,5 @@ spec:
             # ไม่ต้องตั้ง env ที่นี่
             # แล้วก็ปล่อย comment ไว้แบบนี้ได้เลย 
             # ------------------------------------------------------
-
 
 
