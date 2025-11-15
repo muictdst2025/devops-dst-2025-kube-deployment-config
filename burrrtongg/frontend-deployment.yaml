@@ -8,12 +8,12 @@ spec:
     app: burrrtongg-frontend
   ports:
     - port: 80
-      targetPort: 3000
+      targetPort: 80
   type: ClusterIP
 
 ---
 
-piVersion: apps/v1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: burrrtongg-frontend-deployment
@@ -30,10 +30,10 @@ spec:
     spec:
       containers:
         - name: burrrtongg-frontend
-          image: phruek07/burrrtongg-frontend:latest
+          image: chitipatpangma/burrrtongg-fe:fix10
           ports:
-            - containerPort: 3000
-          env:
+            - containerPort: 80
+          # env:
 
             # ------------------------------------------------------
             # Option: 1 — ถ้า frontend ใช้ env API
@@ -43,7 +43,7 @@ spec:
             #   value: "https://muict.app/<group-name>-backend"
 
             # - name: VITE_API_URL
-               value: "https://muict.app/burrrtongg-backend"
+              #  value: "https://muict.app/burrrtongg-backend"
 
         
 

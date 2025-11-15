@@ -1,12 +1,12 @@
 ----- Please add script to create schema + insert initial data
 -- Create database and user
-CREATE DATABASE burrtongg_db;
+CREATE DATABASE burrrtongg_db;
 
-CREATE USER myuser WITH ENCRYPTED PASSWORD 'admin';
+CREATE USER admin WITH ENCRYPTED PASSWORD 'admin';
 
-GRANT ALL PRIVILEGES ON DATABASE burrtongg_db TO admin;
+GRANT ALL PRIVILEGES ON DATABASE burrrtongg_db TO admin;
 -- Switch to database
-\c burrtongg_db;
+\c burrrtongg_db;
 
 SET client_encoding = 'UTF8';
 SET standard_conforming_strings = on;

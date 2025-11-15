@@ -32,7 +32,7 @@ spec:
     spec:
       containers:
         - name: burrrtongg-backend
-          image: phruek07/burrrtongg-app:latest
+          image: kittikhun108/burrrtongg-app:lastest
           ports:
             - containerPort: 8080
           env:
@@ -42,14 +42,14 @@ spec:
             # ========= เลือกใช้ อันที่ Porject เราใช้ =========
 
             # PostgreSQL (Service name = muict, namespace = db-postgres)
-             - name: SPRING_DATASOURCE_URL
-               value: "jdbc:postgresql://muict.db-postgres.svc.cluster.local:5432/burrrtongg_db"
+            - name: SPRING_DATASOURCE_URL
+              value: "jdbc:postgresql://muict.db-postgres.svc.cluster.local:5432/burrrtongg_db"
 
 
             - name: SPRING_DATASOURCE_USERNAME
-              value: "burrrtongg_user"
+              value: "admin"
             - name: SPRING_DATASOURCE_PASSWORD
-              value: "<password>"
+              value: "admin"
 
 
 
