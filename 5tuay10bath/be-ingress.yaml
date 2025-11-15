@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: 5tuay10bath-be-ingress
+  namespace: 5tuay10bath-app
+  annotations:
+    nginx.ingress.kubernetes.io/use-regex: "true"
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
+spec:
+  ingressClassName: nginx
+  tls:
+    - hosts:
+        - muict.app
+      secretName: muict-app-tls
+  rules:
+    - host: muict.app
+      http:
+        paths:
+          - path: /5tuay10bath-backend(/|$)(.*)
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: 5tuay10bath-backend-service
+                port:
+                  number: 8080
