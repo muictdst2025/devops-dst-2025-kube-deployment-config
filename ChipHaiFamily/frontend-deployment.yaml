@@ -1,0 +1,57 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ChipHaiFamily-frontend-service
+  namespace: ChipHaiFamily-app
+spec:
+  selector:
+    app: ChipHaiFamily-frontend
+  ports:
+    - port: 80
+      targetPort: 3000
+  type: ClusterIP
+
+---
+
+piVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ChipHaiFamily-frontend-deployment
+  namespace: ChipHaiFamily-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ChipHaiFamily-frontend
+  template:
+    metadata:
+      labels:
+        app: ChipHaiFamily-frontend
+    spec:
+      containers:
+        - name: ChipHaiFamily-frontend
+          image: kbtr/apartment-frontend:20971d726086b55961a82679259c0d4f57e39d15
+          ports:
+            - containerPort: 3000
+          env:
+
+            # ------------------------------------------------------
+            # Option: 1 — ถ้า frontend ใช้ env API
+            # ให้ uncomment ตัวนี้ แล้วแก้เป็น path ของกลุ่มตามนี้
+            # ------------------------------------------------------
+            # - name: NEXT_PUBLIC_API_URL
+            #   value: "https://muict.app/<group-name>-backend"
+
+            - name: VITE_API_URL
+              value: "https://muict.app/ChipHaiFamily-backend"
+
+            # ------------------------------------------------------
+            # Option: 2 — ถ้า frontend hardcode localhost
+            # ต้องไปแก้ใน code เองเป็น:
+            #   https://muict.app/<group-name>-backend
+            # ไม่ต้องตั้ง env ที่นี่
+            # แล้วก็ปล่อย comment ไว้แบบนี้ได้เลย 
+            # ------------------------------------------------------
+
+
+
