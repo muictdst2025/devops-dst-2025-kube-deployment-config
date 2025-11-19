@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: 5tuay10bath-backend-service
-  namespace: 5tuay10bath-app
+  name: fivetuay10bath-backend-service
+  namespace: fivetuay10bath-app
 spec:
   type: ClusterIP
   selector:
-    app: 5tuay10bath-backend
+    app: fivetuay10bath-backend
   ports:
     - port: 8080
       targetPort: 8080
