@@ -18,20 +18,20 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: 5tuay10bath-backend-deployment
-  namespace: 5tuay10bath-app
+  name: fivetuay10bath-backend-deployment
+  namespace: fivetuay10bath-app
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: 5tuay10bath-backend
+      app: fivetuay10bath-backend
   template:
     metadata:
       labels:
-        app: 5tuay10bath-backend
+        app: fivetuay10bath-backend
     spec:
       containers:
-        - name: 5tuay10bath-backend
+        - name: fivetuay10bath-backend
           image: iamyasuomain/deawkoikid_backend:latest
           ports:
             - containerPort: 8080
@@ -43,16 +43,16 @@ spec:
 
             # PostgreSQL (Service name = muict, namespace = db-postgres)
             - name: SPRING_DATASOURCE_URL
-              value: "jdbc:postgresql://muict.db-postgres.svc.cluster.local:5432/5tuay10bath_db"
+              value: "jdbc:postgresql://muict.db-postgres.svc.cluster.local:5432/fivetuay10bath_db"
 
             # MySQL (Service name = muict-mysql, namespace = db-mysql)
             # - name: SPRING_DATASOURCE_URL
             #   value: "jdbc:mysql://muict-mysql.db-mysql.svc.cluster.local:3306/<groupname>_db"
 
             - name: SPRING_DATASOURCE_USERNAME
-              value: "5tuay10bath_user"
+              value: "fivetuay10bath_user"
             - name: SPRING_DATASOURCE_PASSWORD
-              value: "<password>"
+              value: "fivetuay10bath_pass"
 
 
 

@@ -8,12 +8,12 @@ spec:
     app: fivetuay10bath-frontend
   ports:
     - port: 80
-      targetPort: 3000
+      targetPort: 80
   type: ClusterIP
 
 ---
 
-piVersion: apps/v1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: fivetuay10bath-frontend-deployment
@@ -32,7 +32,7 @@ spec:
         - name: fivetuay10bath-frontend
           image: iamyasuomain/deawkoikid_frontend:latest
           ports:
-            - containerPort: 3000
+            - containerPort: 80
           env:
 
             # ------------------------------------------------------

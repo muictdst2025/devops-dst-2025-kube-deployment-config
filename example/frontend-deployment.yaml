@@ -8,12 +8,12 @@ spec:
     app: <group-name>-frontend
   ports:
     - port: 80
-      targetPort: 3000
+      targetPort: 80
   type: ClusterIP
 
 ---
 
-piVersion: apps/v1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: <group-name>-frontend-deployment
@@ -32,7 +32,7 @@ spec:
         - name: <group-name>-frontend
           image: <dockerhub-username>/<frontend-image-name>:<tag>
           ports:
-            - containerPort: 3000
+            - containerPort: 80
           env:
 
             # ------------------------------------------------------
