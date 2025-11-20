@@ -1,8 +1,8 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: ChipHaiFamily-fe-ingress
-  namespace: ChipHaiFamily-app
+  name: chiphaifamily-fe-ingress
+  namespace: chiphaifamily-app
   annotations:
     cert-manager.io/cluster-issuer: "letsencrypt-prod"
     nginx.ingress.kubernetes.io/use-regex: "true"
@@ -17,10 +17,10 @@ spec:
     - host: muict.app
       http:
         paths:
-          - path: /ChipHaiFamily-frontend(/|$)(.*)
+          - path: /chiphaifamily-frontend(/|$)(.*)
             pathType: ImplementationSpecific
             backend:
               service:
-                name: ChipHaiFamily-frontend-service
+                name: chiphaifamily-frontend-service
                 port:
                   number: 80

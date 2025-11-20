@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: ChipHaiFamily-backend-service
-  namespace: ChipHaiFamily-app
+  name: chiphaifamily-backend-service
+  namespace: chiphaifamily-app
 spec:
   type: ClusterIP
   selector:
-    app: ChipHaiFamily-backend
+    app: chiphaifamily-backend
   ports:
     - port: 8080
       targetPort: 8080
@@ -18,20 +18,20 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: ChipHaiFamily-backend-deployment
-  namespace: ChipHaiFamily-app
+  name: chiphaifamily-backend-deployment
+  namespace: chiphaifamily-app
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: ChipHaiFamily-backend
+      app: chiphaifamily-backend
   template:
     metadata:
       labels:
-        app: ChipHaiFamily-backend
+        app: chiphaifamily-backend
     spec:
       containers:
-        - name: ChipHaiFamily-backend
+        - name: chiphaifamily-backend
           image: kbtr/apartment-backend:20971d726086b55961a82679259c0d4f57e39d15
           ports:
             - containerPort: 8080

@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: ChipHaiFamily-frontend-service
-  namespace: ChipHaiFamily-app
+  name: chiphaifamily-frontend-service
+  namespace: chiphaifamily-app
 spec:
   selector:
-    app: ChipHaiFamily-frontend
+    app: chiphaifamily-frontend
   ports:
     - port: 80
       targetPort: 3000
@@ -16,20 +16,20 @@ spec:
 piVersion: apps/v1
 kind: Deployment
 metadata:
-  name: ChipHaiFamily-frontend-deployment
-  namespace: ChipHaiFamily-app
+  name: chiphaifamily-frontend-deployment
+  namespace: chiphaifamily-app
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: ChipHaiFamily-frontend
+      app: chiphaifamily-frontend
   template:
     metadata:
       labels:
-        app: ChipHaiFamily-frontend
+        app: chiphaifamily-frontend
     spec:
       containers:
-        - name: ChipHaiFamily-frontend
+        - name: chiphaifamily-frontend
           image: kbtr/apartment-frontend:20971d726086b55961a82679259c0d4f57e39d15
           ports:
             - containerPort: 3000
@@ -43,7 +43,7 @@ spec:
             #   value: "https://muict.app/<group-name>-backend"
 
             - name: VITE_API_URL
-              value: "https://muict.app/ChipHaiFamily-backend"
+              value: "https://muict.app/chiphaifamily-backend"
 
             # ------------------------------------------------------
             # Option: 2 — ถ้า frontend hardcode localhost
