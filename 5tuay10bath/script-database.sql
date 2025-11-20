@@ -1,6 +1,9 @@
-CREATE DATABASE IF NOT EXISTS 5tuay10bath_db;
+CREATE DATABASE fivetuay10bath_db;
 
-\c 5tuay10bath_db;
+CREATE USER fivetuay10bath_user WITH PASSWORD 'fivetuay10bath_pass';
+GRANT ALL PRIVILEGES ON DATABASE fivetuay10bath_db TO fivetuay10bath_user;
+
+\c fivetuay10bath_db fivetuay10bath_user;
 
 CREATE TABLE IF NOT EXISTS units (
     id                      UUID            PRIMARY KEY DEFAULT gen_random_uuid(),
