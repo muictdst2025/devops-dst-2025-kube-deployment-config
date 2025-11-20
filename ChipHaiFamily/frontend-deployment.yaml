@@ -30,7 +30,7 @@ spec:
     spec:
       containers:
         - name: chiphaifamily-frontend
-          image: kbtr/apartment-frontend:3645a977c823a4b029ead539b69f3da300036e8b
+          image: kbtr/apartment-frontend:c911d30a592904262bb2e9d17f8547505305adfa
           ports:
             - containerPort: 80
           env:
