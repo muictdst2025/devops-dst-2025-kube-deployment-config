@@ -8,12 +8,12 @@ spec:
     app: chiphaifamily-frontend
   ports:
     - port: 80
-      targetPort: 3000
+      targetPort: 80
   type: ClusterIP
 
 ---
 
-piVersion: apps/v1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: chiphaifamily-frontend-deployment
@@ -32,9 +32,10 @@ spec:
         - name: chiphaifamily-frontend
           image: kbtr/apartment-frontend:20971d726086b55961a82679259c0d4f57e39d15
           ports:
-            - containerPort: 3000
+            - containerPort: 80
           env:
-
+            - name: BACKEND_HOST
+              value: "chiphaifamily-backend-service"
             # ------------------------------------------------------
             # Option: 1 — ถ้า frontend ใช้ env API
             # ให้ uncomment ตัวนี้ แล้วแก้เป็น path ของกลุ่มตามนี้

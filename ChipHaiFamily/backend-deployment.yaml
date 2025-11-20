@@ -49,10 +49,10 @@ spec:
             # - name: SPRING_DATASOURCE_URL
             #   value: "jdbc:mysql://muict-mysql.db-mysql.svc.cluster.local:3306/<groupname>_db"
 
-            # - name: SPRING_DATASOURCE_USERNAME
-            #   value: "<groupname>_user"
-            # - name: SPRING_DATASOURCE_PASSWORD
-            #   value: "<password>"
+            - name: SPRING_DATASOURCE_USERNAME
+              value: "chiphaifamily_user"
+            - name: SPRING_DATASOURCE_PASSWORD
+              value: "chiphaifamily_pass"
 
 
 
