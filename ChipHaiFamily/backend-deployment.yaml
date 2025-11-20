@@ -43,7 +43,7 @@ spec:
 
             # PostgreSQL (Service name = muict, namespace = db-postgres)
             - name: SPRING_DATASOURCE_URL
-              value: "jdbc:postgresql://muict.db-postgres.svc.cluster.local:5432/ChipHaiFamily_db"
+              value: "jdbc:postgresql://muict.db-postgres.svc.cluster.local:5432/chiphaifamily_db"
 
             # MySQL (Service name = muict-mysql, namespace = db-mysql)
             # - name: SPRING_DATASOURCE_URL

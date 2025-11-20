@@ -1,4 +1,12 @@
 ----- Please add script to create schema + insert initial data-- ============================
+CREATE DATABASE chiphaifamily_db;
+
+CREATE USER chiphaifamily_user WITH PASSWORD 'chiphaifamily_pass';
+GRANT ALL PRIVILEGES ON DATABASE chiphaifamily_db TO chiphaifamily_user;
+
+\c chiphaifamily_db chiphaifamily_user;
+
+
 -- DROP TABLES
 -- ============================
 DROP TABLE IF EXISTS invoice_items CASCADE;
