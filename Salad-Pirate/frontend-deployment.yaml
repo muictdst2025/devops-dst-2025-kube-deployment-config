@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: pmm-fe
-          image: chitipatpangma/pmm_fe:2f4aded
+          image: chitipatpangma/pmm_fe:47a0f80
           ports:
             - containerPort: 3000
 ---
