@@ -15,9 +15,15 @@ spec:
     spec:
       containers:
         - name: pmm-fe
-          image: chitipatpangma/pmm_fe:47a0f80
+          image: chitipatpangma/pmm_fe:567c7b7
           ports:
             - containerPort: 3000
+          env:
+          - name: GOOGLE_API_KEY      
+            valueFrom:
+              secretKeyRef:
+                name: my-app-secrets  
+                key: GOOGLE_API_KEY
 ---
 apiVersion: v1
 kind: Service
