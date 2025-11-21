@@ -30,7 +30,7 @@ spec:
     spec:
       containers:
         - name: papapig99-frontend
-          image: pornpatmu/papapig99-frontend:latest
+          image: thitip/event-frontend:8c1a674e7b2a45c145455f2c9990aa3a40fa8edd
           ports:
             - containerPort: 80
           env:

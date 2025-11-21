@@ -30,15 +30,27 @@ spec:
       labels:
         app: papapig99-backend
     spec:
+      initContainers:
+        - name: fix-permissions
+          image: busybox
+          command: ["sh", "-c", "chmod -R 777 /app/images"]
+          volumeMounts:
+            - name: images-storage
+              mountPath: "/app/images"
       containers:
         - name: papapig99-backend
-          image: pornpatmu/papapig99-backend:latest
+          image: pornpatmu/papapig99-backend:1.0
           ports:
             - containerPort: 8080
           env:
             - name: SERVER_PORT
               value: "8080"
+            - name: APP_UPLOAD_DIR
+              value: "/app/images"
+          
 
+      
+            
             # ========= เลือกใช้ อันที่ Porject เราใช้ =========
 
             # PostgreSQL (Service name = muict, namespace = db-postgres)
@@ -54,6 +66,14 @@ spec:
             - name: SPRING_DATASOURCE_PASSWORD
               value: "itds323"
 
+          volumeMounts:
+            - mountPath: "/app/images"  
+              name: images-storage
+
+      volumes:
+        - name: images-storage           
+          persistentVolumeClaim:
+            claimName: papapig99-images-pvc
 
 
 
