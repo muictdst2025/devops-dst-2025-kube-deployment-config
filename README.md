@@ -29,7 +29,7 @@ certificate.yaml
 Note: ควรเป็น SQL คำสั่งสร้างตาราง + เพิ่มข้อมูลต่างๆ (Source Code) ที่รวมการ Create Database ด้วย 
 
 ## Step 4
-แก้ <group-name> เป็นชื่อกลุ่มตัวเองในทุกไฟล์ เป็นตัวเล็กทั้งหมดและไม่ขึ้นต้นด้วยตัวเลข
+แก้ <group-name> เป็นชื่อกลุ่มตัวเองในทุกไฟล์ เป็นตัวเล็กทั้งหมดและไม่ขึ้นต้นด้วยตัวเลขเลยครับ
 และ ใส่ Image ใน backend-deployment.yaml, frontend-deployment.yaml ให้ถูกตามที่เรา push ขึ้นไปที่ Docker Hub
 
 ## Extra
