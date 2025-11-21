@@ -42,7 +42,7 @@ spec:
             # - name: NEXT_PUBLIC_API_URL
             #   value: "https://muict.app/fivetuay10bath-backend"
 
-            - name: VITE_API_URL
+            - name: VITE_DEAWKOIKID_API_BASE_URL
               value: "https://muict.app/fivetuay10bath-backend"
 
             # ------------------------------------------------------
