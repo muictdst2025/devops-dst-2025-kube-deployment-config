@@ -54,5 +54,29 @@ spec:
             - name: SPRING_DATASOURCE_PASSWORD
               value: "fivetuay10bath_pass"
 
+            - name: AWS_ACCESS_KEY_ID
+              valueFrom:
+                secretKeyRef:
+                  name: my-aws-secrets      
+                  key: AWS_ACCESS_KEY_ID    
+
+            - name: AWS_SECRET_ACCESS_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: my-aws-secrets
+                  key: AWS_SECRET_ACCESS_KEY
+
+            - name: AWS_REGION
+              valueFrom:
+                secretKeyRef:
+                  name: my-aws-secrets
+                  key: AWS_REGION
+
+            - name: AWS_BUCKET_NAME
+              valueFrom:
+                secretKeyRef:
+                  name: my-aws-secrets
+                  key: AWS_BUCKET_NAME
+
 
 

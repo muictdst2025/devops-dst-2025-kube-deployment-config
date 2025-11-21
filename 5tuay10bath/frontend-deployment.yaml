@@ -8,7 +8,7 @@ spec:
     app: fivetuay10bath-frontend
   ports:
     - port: 80
-      targetPort: 80
+      targetPort: 3000
   type: ClusterIP
 
 ---
@@ -32,9 +32,9 @@ spec:
         - name: fivetuay10bath-frontend
           image: iamyasuomain/deawkoikid_frontend:latest
           ports:
-            - containerPort: 80
+            - containerPort: 3000
           env:
-
+            
             # ------------------------------------------------------
             # Option: 1 — ถ้า frontend ใช้ env API
             # ให้ uncomment ตัวนี้ แล้วแก้เป็น path ของกลุ่มตามนี้
