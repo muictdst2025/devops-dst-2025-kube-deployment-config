@@ -1,14 +1,14 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: fivetuay10bath-frontend-service
-  namespace: fivetuay10bath-app
+  name: papapig99-frontend-service
+  namespace: papapig99-app
 spec:
   selector:
-    app: fivetuay10bath-frontend
+    app: papapig99-frontend
   ports:
     - port: 80
-      targetPort: 3000
+      targetPort: 80
   type: ClusterIP
 
 ---
@@ -16,42 +16,41 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: fivetuay10bath-frontend-deployment
-  namespace: fivetuay10bath-app
+  name: papapig99-frontend-deployment
+  namespace: papapig99-app
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: fivetuay10bath-frontend
+      app: papapig99-frontend
   template:
     metadata:
       labels:
-        app: fivetuay10bath-frontend
+        app: papapig99-frontend
     spec:
       containers:
-        - name: fivetuay10bath-frontend
-          image: iamyasuomain/deawkoikid_frontend:latest
+        - name: papapig99-frontend
+          image: thitip/event-frontend:8c1a674e7b2a45c145455f2c9990aa3a40fa8edd
           ports:
-            - containerPort: 3000
+            - containerPort: 80
           env:
-            
+
             # ------------------------------------------------------
             # Option: 1 — ถ้า frontend ใช้ env API
             # ให้ uncomment ตัวนี้ แล้วแก้เป็น path ของกลุ่มตามนี้
             # ------------------------------------------------------
             # - name: NEXT_PUBLIC_API_URL
-            #   value: "https://muict.app/fivetuay10bath-backend"
+            #   value: "https://muict.app/<group-name>-backend"
 
-            - name: VITE_DEAWKOIKID_API_BASE_URL
-              value: "https://muict.app/fivetuay10bath-backend"
+            # - name: VITE_API_URL
+            #   value: "https://muict.app/<group-name>-backend"
 
             # ------------------------------------------------------
             # Option: 2 — ถ้า frontend hardcode localhost
             # ต้องไปแก้ใน code เองเป็น:
-            #   https://muict.app/fivetuay10bath-backend
+            #   https://muict.app/<group-name>-backend
             # ไม่ต้องตั้ง env ที่นี่
             # แล้วก็ปล่อย comment ไว้แบบนี้ได้เลย 
             # ------------------------------------------------------
-
 
 
