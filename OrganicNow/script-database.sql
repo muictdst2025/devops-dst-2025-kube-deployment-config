@@ -1,3 +1,13 @@
+CREATE DATABASE organicnow_db;
+CREATE USER organicnow_user WITH PASSWORD 'organicnow_pass';
+GRANT ALL PRIVILEGES ON DATABASE organicnow_db TO organicnow_user;
+
+-- --- Connect to the new database as the new user ---
+-- (You may need to run this command manually in psql)
+\c organicnow_db organicnow_user
+
+
+
 ----- Please add script to create schema + insert initial data
 CREATE TABLE room (
     room_id BIGSERIAL PRIMARY KEY,

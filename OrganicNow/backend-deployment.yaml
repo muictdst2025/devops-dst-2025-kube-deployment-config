@@ -32,7 +32,7 @@ spec:
     spec:
       containers:
         - name: organicnow-backend
-          image: heangkung/organic-backend:lastest
+          image: heangkung/organic-backend:latest
           ports:
             - containerPort: 8080
           env:
