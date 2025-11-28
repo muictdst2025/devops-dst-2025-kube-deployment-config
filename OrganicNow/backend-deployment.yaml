@@ -32,7 +32,7 @@ spec:
     spec:
       containers:
         - name: organicnow-backend
-          image: heangkung/organic-backend:latest
+          image: heangkung/organicnow-backend:latest
           ports:
             - containerPort: 8080
           env:
@@ -50,9 +50,9 @@ spec:
             #   value: "jdbc:mysql://muict-mysql.db-mysql.svc.cluster.local:3306/<groupname>_db"
 
             - name: SPRING_DATASOURCE_USERNAME
-              value: "postgres"
+              value: "organicnow_user"
             - name: SPRING_DATASOURCE_PASSWORD
-              value: "postgres123"
+              value: "organicnow_pass"
 
 
 
