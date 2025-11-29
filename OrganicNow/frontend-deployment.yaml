@@ -30,7 +30,7 @@ spec:
     spec:
       containers:
         - name: organicnow-frontend
-          image: <dockerhub-username>/<frontend-image-name>:<tag>
+          image: heangkung/organicnow-frontend:latest
           ports:
             - containerPort: 80
           env:
@@ -52,6 +52,8 @@ spec:
             # ไม่ต้องตั้ง env ที่นี่
             # แล้วก็ปล่อย comment ไว้แบบนี้ได้เลย 
             # ------------------------------------------------------
+
+
 
 
 
